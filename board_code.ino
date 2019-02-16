@@ -49,8 +49,6 @@ const int ledThreePin = 12;
 
 const int buttonFourPin = 5;
 const int ledFourPin = 13;
-
-const int buzzerPin = 6; //Define buzzerPin
  
 // variables will change:
 int buttonOneState = 0;         // variable for reading the pushbutton status
@@ -64,9 +62,6 @@ boolean notes[10] = {false, false, false, false, false, false, false, false, fal
 // change this array to change note values
 byte noteValue[10] = {60, 64, 67, 72, 0, 0, 0, 0, 0, 0}; // put the values of the 10 notes here DO NOT MODIFY THIS WITH FUNCTIONS
 
-// checks which notes should play this round based on the sensor data
-boolean noteBuffer[10] = {false, false, false, false, false, false, false, false, false, false};
-
 void setup() {
   // initialize the LED pin as an output:
   pinMode(ledOnePin, OUTPUT);
@@ -78,8 +73,7 @@ void setup() {
   pinMode(buttonTwoPin, INPUT);
   pinMode(buttonThreePin, INPUT);
   pinMode(buttonFourPin, INPUT);
-  // initialize buzzer
-  pinMode(buzzerPin, OUTPUT); //Set buzzerPin as output
+ 
   VS1053_MIDI.begin(31250); // MIDI uses a 'strange baud rate'
   
   pinMode(VS1053_RESET, OUTPUT);
